@@ -29,13 +29,13 @@ Santiago Regina 177065
   - Subnet Publica 2 - 10.0.16.0/20
 
 *Firewalling*
-  - Security Group - Todo el trafico habilitado dentro del cluster
+  - Security Group - Todo el tráfico habilitado dentro del cluster
   - Security Group - Se expone el puerto 80 hacia internet desde el cluster
 
 
-## Automización
+## Automatización
 
-*Se utlizo terraform para la creacion de:*
+*Se utilizó terraform para la creación de:*
 VPC - obligatorio-vpc
 Subnets
   - obligatorio-subnet-private1
@@ -50,9 +50,9 @@ Route Tables
 Cluster EKS - obligatorio
 Nodos EKS - workersobli
 
-*Se realizo manualmente:*
+## Manualmente
 
-Registros de imagenes en ECR:
+Registros de imágenes en ECR:
   - 170695521185.dkr.ecr.us-east-1.amazonaws.com/adservice
   - 170695521185.dkr.ecr.us-east-1.amazonaws.com/cartservice
   - 170695521185.dkr.ecr.us-east-1.amazonaws.com/checkoutservice
@@ -65,13 +65,13 @@ Registros de imagenes en ECR:
   - 170695521185.dkr.ecr.us-east-1.amazonaws.com/recommendationservice
   - 170695521185.dkr.ecr.us-east-1.amazonaws.com/shippingservice
   
-Creacion de las imagenes y subirlas a los registros correspondientes.
+Creación de las imágenes y subirlas a los registros correspondientes.
 
 Posicionados dentro de las carpetas de cada micro servicio, se ejecuta el comando:
 
 *docker build -t "nametag" .*
 
-Por ejemplo para el micro servicio "adservice" se ejecuto "docker build -t adservice . "
+Por ejemplo para el micro servicio "adservice" se ejecutó "docker build -t adservice . "
 
 Luego de creada la imagen, se ejecutaron los siguientes comandos para subir la imagen al registro.
  
@@ -83,14 +83,14 @@ Luego de creada la imagen, se ejecutaron los siguientes comandos para subir la i
  
 De esta forma la imagen ya quedo en el registro, pronta para ser utilizada.
 
-Por ultimo se modifico en cada archivo kubernetes-manifests.yaml la direccion de la imagen en el elemento "image:" por la direccion de los registros
+Por último se modificó en cada archivo kubernetes-manifests.yaml la dirección de la imagen en el elemento "image:" por la dirección de los registros
 
 Ejemplo: *image: 170695521185.dkr.ecr.us-east-1.amazonaws.com/adservice:latest*
 
   
 *Deployment de los micro servicios en los pods*
 
-Posicionados en las carpetas deployment de cada micro servicio se ejecuto "kubectl create -f kubernetes-manifests.yaml" 
+Posicionados en las carpetas deployment de cada micro servicio se ejecutó "kubectl create -f kubernetes-manifests.yaml" 
   
 
 
