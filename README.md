@@ -17,6 +17,13 @@ Santiago Regina 177065
 
 *Servicios de AWS utilizados:* VPC, EKS, ECR, EC2. 
 
+## Diagrama de arquitectura
+
+
+
+![Obligatorio_Cloud drawio](https://user-images.githubusercontent.com/52022499/175193870-cbba73d6-0c05-4ec4-8aaf-de3db49914c8.png)
+
+
 
 ## Datos de infraestructura
 
@@ -49,6 +56,17 @@ Route Tables
   - obligatorio-public
 Cluster EKS - obligatorio
 Nodos EKS - workersobli
+
+Para la ejecución de la automatización nos posicionamos en la carpeta terraformobli y ejecutamos
+
+*terraform init* para inicializar el ambiente de trabajo en esa carpeta.
+
+*terraform plan* para que analice el contenido de los archivos a ejecutar y nos presente un resumen de los cambios que va a realizar
+
+*terraform apply* sumado a lo anterior nos da la opción de aplicar los cambios, si contestamos con "yes"
+
+Al contestar "yes" se ejecutan las diferentes automatizaciones y una vez finalizado podemos corroborarlo en AWS.
+
 
 ## Manualmente
 
