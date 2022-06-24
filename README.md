@@ -61,7 +61,7 @@ añadirlos al carrito y compralos.
 
 ## Datos de infraestructura
 
-*Tipo de instancias:* t3.large
+*Tipo de instancias:* t3.medium
 
 *Bloques CIDRs:* 
   - Subnet Privada 1 - 10.0.128.0/20
