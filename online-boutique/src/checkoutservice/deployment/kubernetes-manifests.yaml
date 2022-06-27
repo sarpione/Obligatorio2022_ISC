@@ -15,7 +15,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: <IMAGE:TAG>
+          image: 170695521185.dkr.ecr.us-east-1.amazonaws.com/checkoutservice:latest
           ports:
           - containerPort: 5050
           readinessProbe:
